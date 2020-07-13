@@ -1,3 +1,66 @@
+# Angular 7
+
+## To Install Angular 7, you require:
+
+### Node js
+### NPM
+### Angular CLI
+### IDE
+
+```
+To check if node js is already installed in the system, in the terminal type :
+>node -v
+```
+
+## Steps to install Angular 7:
+
+In the terminal :
+
+### Step 1:
+
+Install npm :
+
+```
+>npm install -g @angular/cli
+```
+
+### Step 2 :
+
+Check the version :
+
+```
+>ng version
+```
+
+### Step 3 :
+
+Create a project folder and open the terminal inside the folder.
+
+### Step 4:
+
+Create an app named my-dream-app(any name)
+
+```
+>ng new my-dream-app
+```
+
+### Step 5:
+
+In Visual Studio Code terminal :
+
+```
+>ng serve
+```
+
+### Step 6:
+
+Go to the localhost :
+
+```
+"my-dream-app is running!" is seen.
+```
+
+
 # MyDreamApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
