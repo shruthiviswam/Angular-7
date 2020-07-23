@@ -1,5 +1,50 @@
-<ul>
+<!-- <ul>
     <li *ngFor = "let course of courses">
         {{course}}
     </li>
-</ul>
+</ul> -->
+
+<!-- class binding -->
+<!-- <button name = "Show" class="btn btn-primary active" [class.active] ="isActive" > Show </button> -->
+
+<!-- class binding -->
+<!-- <input type="text" value="name" class="input" [class.input]="on"> -->
+
+<!-- Style Binding -->
+<!-- <button [style.backgroundColor] = "isActive? 'green' : 'red' " >Submit</button> -->
+
+<!-- Event Binding -->
+<!-- <button (click) = "onSave($event)"> Submit </button> -->
+
+<!-- Event Filtering -->
+<!-- Normal <input type = "text" (keyup)= "onKeyUp($event)"> <br>
+Angular <input type="text" (keyup.enter) = "onkeyup($event)"> -->
+
+<!-- Two Way data Binding -->
+<!-- <input type = "text" [(ngModel)] = "email1" (keyup.enter) = "onkeyuptwoway()">-->
+
+<!-- <h1>Custom Pipe</h1><br>
+<h2>Square root of 625 is : {{625 | sqrt}}</h2><br>
+<h2>Square root of 169 is : {{169 | sqrt}}</h2> -->
+
+<!-- Pipe with arguments -->
+<!-- <h2> text : {{text | summary}}</h2><br>
+<h2> text with limit : {{text | summary : 100}}</h2> -->
+
+<!-- Task : star full and empty with click -->
+<!-- <span class = 'glyphicon' [class.glyphicon-star-empty]="!isStarred" [class.glyphicon-star]="isStarred" (click) = "onclick()"></span> -->
+
+<!-- Pipes -->
+<!-- {{'welcome' | uppercase}}<br>
+{{'welcome' | lowercase}}<br>
+{{6589.23 | currency : "USD"}}<br>
+{{todaydate | date : 'dd/MM/yy'}}<br>
+{{todaydate | date : 'shortTime'}}<br>
+{{454.7878 | number :'3.4-4'}}<br>
+{{00.5432 | percent}}<br>
+{{jsonval | json}}<br>
+{{months | slice : 8:12}}<br> -->
+
+<!-- task : titlecase pipe -->
+<input type="text" [(ngModel)]="txt">
+{{txt | titlecase}}
