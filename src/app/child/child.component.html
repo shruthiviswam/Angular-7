@@ -1,0 +1,85 @@
+<p>child works!</p>
+
+<!-- <ul>
+    <li *ngFor = "let x of childMessage">
+        {{x.name}}
+    </li>
+</ul> -->
+
+<!-- <button (click) = "sendMessage()">Send Message </button> -->
+
+<!-- ngIf -->
+<!-- ng If :
+<div *ngIf = "courses.length > 0">
+    List of courses
+</div>
+
+<div *ngIf = "courses.length == 0">
+    No courses yet.
+</div><br>
+
+<!-- ngIf...else -->
+<!-- ng If else:
+<div *ngIf = "courses.length>0; else noCourses">
+    <h2>List of Courses</h2>
+</div>
+
+<ng-template #noCourses>
+    <h2>No Courses Yet!</h2>
+</ng-template><br>
+
+<!-- Hidden -->
+<!-- Hidden :
+<div [hidden] = "courses.length==0">
+    <h2> List of Courses</h2>
+</div>
+
+<div [hidden] = "courses.length>0">
+    <h2> No Courses Yet!</h2>
+</div><br> -->
+
+<!-- ngSwitch -->
+<!-- ng Switch :
+<ul class = "nav nav-pills">
+    <li [class.active] = "ViewMode == 'map'">
+        <a (click) = "ViewMode = 'map'">
+            Map View
+        </a>
+    </li>
+
+    <li [class.active] = "ViewMode == 'list'">
+        <a (click) = "ViewMode = 'list'">
+            List View
+        </a>
+    </li>
+</ul>
+
+<div [ngSwitch] = "ViewMode">
+    <div *ngSwitchCase = "'map'"> 
+        Contents of Map View
+    </div>
+
+    <div *ngSwitchCase = "'list'">
+        Contents of List View
+    </div>
+
+    <div *ngSwitchDefault>
+        Default View
+    </div>
+</div>
+
+<!-- ngFor -->
+<!-- ng For :
+<ul>
+    <li *ngFor = "let o of ob; index as i">
+        {{i}} - {{o.name}}
+    </li>
+</ul> -->
+
+<h1 [ngStyle] = "{color : getcolor()}">
+    Hello
+</h1>
+
+<h2 [ngClass] = "{myClass : myStyle()}">
+    Welcome
+</h2>

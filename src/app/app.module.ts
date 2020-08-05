@@ -9,6 +9,8 @@ import { CourseComponent } from './course/course.component'
 import { SqrtPipe } from './squareroot.pipe';
 import { SummaryPipe } from './summary.pipe';
 import { TitlecasePipe } from './titlecase.pipe';
+import { ChildComponent } from './child/child.component';
+import { MyFormComponent } from './my-form/my-form.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { TitlecasePipe } from './titlecase.pipe';
     CourseComponent,
     SqrtPipe,
     SummaryPipe,
-    TitlecasePipe
+    TitlecasePipe,
+    ChildComponent,
+    MyFormComponent
   ],
   imports: [
     BrowserModule,

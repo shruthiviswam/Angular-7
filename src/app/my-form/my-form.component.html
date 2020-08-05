@@ -1,0 +1,47 @@
+<p>my-form works!</p>
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form (ngSubmit) ="onSubmit()" #f = "ngForm">
+                <div class = "form-group">
+                    <label for = "username">Username</label>
+                    <input type="text" class="form-control" ngModel name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for = "email">Email</label>
+                    <input type="email" class="form-control" ngModel name="email" #email="ngModel" required email>
+                    <span class = "help-block" *ngIf="!email.valid && email.touched">
+                        Please enter valid email
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for = "secret-question">Select Question</label>
+                    <select class="form-control" name="secret">
+                        <option value="Q1">Q1</option>
+                        <option value="Q2">Q2</option>
+                        <option value="Q3">Q3</option>
+                        <option value="Q4">Q4</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea class = "form-control" name="questionAnswer" rows="3" [(ngModel)]="answer">
+                    </textarea>
+                </div>
+                <p>Your answer is : {{answer}}</p>
+
+                <p>Gender</p>
+                <div class="radio" *ngFor = "let gender of genders">
+                    <label>
+                        <input type="radio" name="gender" ngModel [value]="gender">
+                        {{gender}}
+                    </label>
+                </div>
+                <button type ="button" (click) = "suggestUsername()" class="btn btn-default">
+                    Suggest Username
+                </button>
+                <button type="submit" [disabled] = '!f.valid' class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
