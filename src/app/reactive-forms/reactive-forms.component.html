@@ -1,0 +1,109 @@
+<p>reactive-forms works!</p>
+<div class = "container">
+    <div class = "row">
+        <div class = "col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form [formGroup] = "signupForm" (ngSubmit) = "onSubmit()">
+                <div class = "form-group">
+                    <label for = "username">Username</label>
+                    <input type="text" class="form-control" formControlName="username">
+                    <div class = "errors" *ngIf="signupForm.get('username').invalid && (signupForm.get('username').touched||signupForm.get('username').dirty)">
+                        <div *ngIf = "signupForm.get('username').hasError('required')">
+                            Please enter your username
+                        </div>
+                        <div *ngIf = "signupForm.get('username').errors.check">
+                            Please do not enter forbidden name
+                        </div>
+                    </div>
+                    <!-- <span class = "help-block" *ngIf = "!signupForm.get('username').valid && signupForm.get('username').touched">
+                        Please Enter valid Username
+                    </span> -->
+                </div>
+                <div class="form-group">
+                    <label for = "email">Email</label>
+                    <input type="email" class="form-control" formControlName="email">
+                    <div *ngIf = "signupForm.get('email').errors.emailforbidden">
+                        Email id is forbidden
+                    </div>
+                    <!-- <span class = "help-block" *ngIf = "!signupForm.get('email').valid && signupForm.get('email').touched">
+                        Please Enter valid Email
+                    </span> -->
+                </div>
+                <div class="form-group">
+                    <label for = "age">Age </label>
+                    <input type="number" class="form-control" formControlName="age">
+                    <div class = "errors" *ngIf="signupForm.get('age').invalid && (signupForm.get('age').touched||signupForm.get('age').dirty)">
+                        <div *ngIf = "signupForm.get('age').hasError('required')">
+                            Please enter an age
+                        </div>
+                        <div *ngIf = "signupForm.get('age').errors.ageRange">
+                            Age should be between 18 and 45
+                        </div>
+                    </div>
+                </div>
+                <label for = "gender">Gender</label>
+                <div class="radio" *ngFor = "let gender of genders">
+                    <label>
+                        <input type="radio" formControlName="gender" [value]="gender">
+                        {{gender}}
+                    </label>
+                </div>
+                <div formArrayName = 'hobbies'>
+                    <label for="hobbies">Your Hobbies</label><br>
+                    <div *ngFor = "let hobby of signupForm.get('hobbies')['controls'];let i = index">
+                        <div formGroupName = "{i}">
+                            <input id="hobby_{{i}}" type="text" class="form-control" formControlName = "hobby">
+                            <button *ngIf = "signupForm.get('hobbies')['length']>1" (click) = "removeHobby(i)">
+                                x
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default" (click) = "onAddHobbies()">
+                        Add Hobby
+                    </button>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class = "container"> 
+    <div class = "row">
+        <div class = "col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form [formGroup] = "signupForm" (ngSubmit) = "onSubmit()">
+                <div class = "form-group">
+                    <label for = "name">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                </div>
+                <div formArrayName = 'skills'>
+                    <label for="skills">List :</label><br>
+                    <div *ngFor = "let s of signupForm.get('skills')['controls'];let i = index">
+                        <div formGroupName = "{i}"> 
+                            Skill : <input type="text" class="form-control" formControlName = "skill">
+                            Experiance : <input type="text" class="form-control" formControlName = "exp">
+                            <button *ngIf = "signupForm.get('skills')['length']>1" (click) = "removeskills(i)">
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default" (click) = "onAddskills()">
+                        Add Skills
+                    </button>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <div>
+                    <div class="row" *ngIf="isSubmit">
+                        <div class="col-xs-12">
+                            <h3>Submitted Data : </h3>
+                            <p>{{this.signupForm.name}}</p>
+                            <p>{{this.signupForm.skills}}</p>
+                            <p>{{this.signupForm.exp}}</p>
+                            <p>{{this.signupForm.value | json}}</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>  -->

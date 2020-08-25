@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-my-form',
@@ -15,8 +16,11 @@ export class MyFormComponent implements OnInit {
 
   @ViewChild ('f' , {static : false}) signupForm : NgForm
 
+  data : string = "";
+
   onSubmit(){
-    console.log(this.signupForm)
+    console.log(this.signupForm);
+    this.data = this.signupForm.value.username
   }
 
   answer:string ="";
@@ -38,7 +42,9 @@ export class MyFormComponent implements OnInit {
     //   gender : 'male'
       
     // })
+    
   }
+  
 
 
   // onSubmit(f : NgForm){

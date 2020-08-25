@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { SummaryPipe } from './summary.pipe';
 import { TitlecasePipe } from './titlecase.pipe';
 import { ChildComponent } from './child/child.component';
 import { MyFormComponent } from './my-form/my-form.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 
 @NgModule({
@@ -22,12 +24,14 @@ import { MyFormComponent } from './my-form/my-form.component';
     SummaryPipe,
     TitlecasePipe,
     ChildComponent,
-    MyFormComponent
+    MyFormComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
